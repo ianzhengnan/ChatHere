@@ -17,6 +17,7 @@
 
 
 - (instancetype) initWithDict: (NSDictionary *)dict;
+
 + (instancetype) contactPersonWithDict:(NSDictionary *)dict;
 
 @end

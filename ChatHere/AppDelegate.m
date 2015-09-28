@@ -23,10 +23,13 @@
     
     MessageItemViewController *messageItemvc = [[MessageItemViewController alloc] init];
     
+    UITabBarController *tabbar = [[UITabBarController alloc] init];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:messageItemvc];
     
-    self.window.rootViewController = navController;
+    tabbar.viewControllers = @[navController];
+    
+    self.window.rootViewController = tabbar;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     

@@ -7,22 +7,60 @@
 //
 
 #import "MessageItemViewController.h"
-
+#import "MessageHeader.h"
+#import "ContactPerson.h"
 
 @interface MessageItemViewController ()
+
+@property (nonatomic, strong) NSArray *messageHDs;
+@property (nonatomic, strong) NSArray *persons;
 
 @end
 
 @implementation MessageItemViewController
 
+//load message headers
+- (NSArray *)messageHDs{
+
+    
+    if (!_messageHDs) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"MessageHeaders.plist" ofType:nil];
+        NSArray *array = [NSArray arrayWithContentsOfFile:path];
+        NSMutableArray *muArray = [NSMutableArray arrayWithCapacity:array.count];
+        
+        for (NSDictionary *dict in array) {
+            MessageHeader *msgHd = [MessageHeader msgHDWithDict:dict];
+            [muArray addObject:msgHd];
+        }
+        _messageHDs = [muArray copy];
+    }
+    return _messageHDs;
+}
+
+//load contact person
+- (NSArray *)persons{
+
+    if (!_persons) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"ContactPersons.plist" ofType:nil];
+        NSArray *array = [NSArray arrayWithContentsOfFile:path];
+        NSMutableArray *muArray = [NSMutableArray arrayWithCapacity:array.count];
+        
+        for (NSDictionary *dict in array) {
+            ContactPerson *ctps = [ContactPerson contactPersonWithDict:dict];
+            [muArray addObject:ctps];
+        }
+        _persons = [muArray copy];
+    }
+    return _persons;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.tableView.sectionHeaderHeight = 40;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self clipExtraCellLine:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,24 +73,43 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.messageHDs.count;
 }
 
-/*
+#pragma mark - remove useless lines
+- (void)clipExtraCellLine:(UITableView *)tableView{
+
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor clearColor];
+    [self.tableView setTableFooterView:view];
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    static NSString *identifier = @"messageHdCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+    }
+    
+    MessageHeader *msgHd = self.messageHDs[indexPath.row];
+    ContactPerson *person = self.persons[indexPath.row];
+    
+    cell.imageView.image = [UIImage imageNamed:person.icon];
+    cell.textLabel.text = person.name;
+    cell.detailTextLabel.text = msgHd.lastMsg;
+
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

@@ -16,4 +16,10 @@
 @property (nonatomic, copy) NSString *msgHdId;
 @property (nonatomic, copy) NSString *msgContent;
 
+- (instancetype)initWithDict: (NSDictionary *)dict;
+
++ (instancetype)msgWithDict: (NSDictionary *)dict;
+
+
+
 @end

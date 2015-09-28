@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *msgHdId;
 @property (nonatomic, copy) NSString *lastMsg;
 @property (nonatomic, copy) NSDate *lastPost;
+@property (nonatomic, copy) NSString *personId;
 @property (nonatomic, strong) ContactPerson *cPerson;
 
 

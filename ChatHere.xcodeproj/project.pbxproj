@@ -10,6 +10,9 @@
 		15424F1D1BB0106300E7CF2A /* ContactPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 15424F1C1BB0106300E7CF2A /* ContactPerson.m */; };
 		15424F201BB013C900E7CF2A /* MessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 15424F1F1BB013C900E7CF2A /* MessageHeader.m */; };
 		15424F231BB015B200E7CF2A /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 15424F221BB015B200E7CF2A /* Message.m */; };
+		15424F251BB94F0900E7CF2A /* MessageHeaders.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15424F241BB94F0900E7CF2A /* MessageHeaders.plist */; };
+		15424F271BB94F1900E7CF2A /* Messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15424F261BB94F1900E7CF2A /* Messages.plist */; };
+		15424F291BB9570000E7CF2A /* ContactPersons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15424F281BB9570000E7CF2A /* ContactPersons.plist */; };
 		155FAC3E1BAACF6700D489B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 155FAC3D1BAACF6700D489B9 /* main.m */; };
 		155FAC411BAACF6700D489B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 155FAC401BAACF6700D489B9 /* AppDelegate.m */; };
 		155FAC441BAACF6700D489B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 155FAC431BAACF6700D489B9 /* ViewController.m */; };
@@ -37,6 +40,9 @@
 		15424F1F1BB013C900E7CF2A /* MessageHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageHeader.m; sourceTree = "<group>"; };
 		15424F211BB015B200E7CF2A /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		15424F221BB015B200E7CF2A /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		15424F241BB94F0900E7CF2A /* MessageHeaders.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MessageHeaders.plist; sourceTree = "<group>"; };
+		15424F261BB94F1900E7CF2A /* Messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Messages.plist; sourceTree = "<group>"; };
+		15424F281BB9570000E7CF2A /* ContactPersons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ContactPersons.plist; sourceTree = "<group>"; };
 		155FAC381BAACF6700D489B9 /* ChatHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		155FAC3C1BAACF6700D489B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		155FAC3D1BAACF6700D489B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -142,6 +148,9 @@
 			children = (
 				155FAC3C1BAACF6700D489B9 /* Info.plist */,
 				155FAC3D1BAACF6700D489B9 /* main.m */,
+				15424F241BB94F0900E7CF2A /* MessageHeaders.plist */,
+				15424F261BB94F1900E7CF2A /* Messages.plist */,
+				15424F281BB9570000E7CF2A /* ContactPersons.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -245,7 +254,10 @@
 			files = (
 				155FAC471BAACF6700D489B9 /* Main.storyboard in Resources */,
 				155FAC4C1BAACF6700D489B9 /* LaunchScreen.xib in Resources */,
+				15424F271BB94F1900E7CF2A /* Messages.plist in Resources */,
 				155FAC491BAACF6700D489B9 /* Images.xcassets in Resources */,
+				15424F291BB9570000E7CF2A /* ContactPersons.plist in Resources */,
+				15424F251BB94F0900E7CF2A /* MessageHeaders.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
